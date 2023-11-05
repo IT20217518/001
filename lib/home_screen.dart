@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'chatbot_screen.dart';
+
 import 'chemical_suggestion_screen.dart'; // Import your new screen
+
 import 'cure_analysis_screen.dart';
+
 import 'disease_detection_screen.dart';
-import 'root_cause_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -38,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.blue,
             ),
             GridItem(
-              text: 'Root Cause',
+              text: 'Chat bot',
               color: Colors.green,
             ),
             GridItem(
@@ -58,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class GridItem extends StatelessWidget {
   final String text;
+
   final Color color;
 
   const GridItem({Key? key, required this.text, required this.color})
@@ -74,11 +78,11 @@ class GridItem extends StatelessWidget {
               builder: (context) => const DiseaseDetectionScreen(),
             ),
           );
-        } else if (text == 'Root Cause') {
+        } else if (text == 'Chat bot') {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const RootCauseScreen(),
+              builder: (context) => const ChatbotScreen(),
             ),
           );
         } else if (text == 'Chemical Suggestion') {
